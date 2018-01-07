@@ -1,0 +1,12 @@
+- Minutes/Notes
+- Code
+  - Blockchain
+  - Network
+  - Application
+- Test
+- Documentation
+- (File) Docker - to abstract away underlying systems/config
+- (File) requirements.txt
+    - pycrypto
+    - tcp/ip protocol
+    - requests
