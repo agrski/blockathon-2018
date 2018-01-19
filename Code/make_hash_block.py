@@ -2,8 +2,6 @@ import Crypto.Hash.MD5 as MD5
 import Crypto.PublicKey.RSA as RSA
 import os
 
-#takes the records to be in the block,
-# the private key of the node creating the block and the current chain as inputs and returns the completed block
 def make_block(records, chain, key, nodeID):
     parentBlock = chain[-1]
     parentSignature = parentBlock[u'signature']
@@ -15,19 +13,17 @@ def make_block(records, chain, key, nodeID):
     block = {u'signature': blockSignature, u'contents': blockContents}
     return block
 
-#block is signed using the private key of the block creating node
 def sign(blockContents, key, nodeID)
-    # we created a hash to sign as this is more computationally efficient, but potentially less secure
+    # Signing a hash is more computationally efficient
     hash = MD5.new(blockContents).digest()
-    # sign the hash
     signature = key.sign(hash, nodeID)
     return signature
 
-#creates a new node, this function should only be called after the decision to create a new node has been approved and a node id selected
+# This function should only be called after the decision to create a new node
+# has been approved and a node id selected
 def create_node(nodeID)
     # Generates a fresh public/private key pair
-    key[nodeID] = RSA.alg.generate(384, os.urandom)#384 is no. of bits that make up the key
-    #can be altered to change security v compute time trade off
+    key[nodeID] = RSA.alg.generate(384, os.urandom)
     pubkey[nodeID] = key[nodeID].publickey()
     return key[nodeID], pubkey[nodeID]
 
@@ -37,14 +33,13 @@ def check_block_hash(block, pubkey[nodeID])
     hash = MD5.new(blockcontent).digest()
     return pubkey[nodeID].verify(hash, blockSignature)
 
-def get_node_id(block) # function to get node id from block
+def get_node_id(block)
     return nodeID
 
-#finds the point at which 2 chains diverge and calle this the
 def find_divegent_point(chain1[], chain2[])
     return d
 
-#given 2 chains it will pick the one that id prefered, chain's validity should be checked before this function is called
+# Chain validity should be checked before this function is called
 def pick_from_chains(chain1[], chain2[])
     for i in (1,len(chain1[])):
         nodeID[i] = get_node_id(chain1[i])
