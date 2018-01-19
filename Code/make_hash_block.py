@@ -1,6 +1,6 @@
 #takes the records to be in the block,
 # the private key of the node creating the block and the current chain as inputs and returns the completed block
-def makeBlock(records, chain, key, nodeid):
+def make_block(records, chain, key, nodeid):
     parentBlock = chain[-1]
     parentsignature = parentBlock[u'signature']
     blockNumber = parentBlock[u'contents'][u'blockNumber'] + 1
@@ -21,7 +21,7 @@ def sign(blockContents, key, nodeid)
     return signature
 
 #creates a new node, this function should only be called after the decision to create a new node has been approved and a node id selected
-def createnode(nodeid)
+def create_node(nodeid)
     import Crypto.PublicKey.RSA as RSA
     import os
     # Generates a fresh public/private key pair
@@ -30,44 +30,44 @@ def createnode(nodeid)
     pubkey[nodeid] = key[nodeid].publickey()
     return key[nodeid], pubkey[nodeid]
 
-def checkblockhash(block, pubkey[nodeid])
+def check_block_hash(block, pubkey[nodeid])
     blocksignature = block[u'signature']
     blockcontent = block[u'contents']
     hash = MD5.new(blockcontent).digest()
     return pubkey[nodeid].verify(hash, blocksignature)
 
-def getnodeid(block) # function to get node id from block
+def get_node_id(block) # function to get node id from block
     return nodeid
 
 #finds the point at which 2 chains diverge and calle this the
-def finddivegentpoint(chain1[], chain2[])
+def find_divegent_point(chain1[], chain2[])
     return d
 
 #given 2 chains it will pick the one that id prefered, chain's validity should be checked before this function is called
-def pickfromchains(chain1[], chain2[])
+def pick_from_chains(chain1[], chain2[])
     for i in (1,len(chain1[])):
-        nodeid[i] = getnodeid(chain1[i])
+        nodeid[i] = get_node_id(chain1[i])
     countd1 = len(set(nodeid[]))
     for i in (1, len(chain2[])):
-        nodeid[i] = getnodeid(chain2[i])
+        nodeid[i] = get_node_id(chain2[i])
     countd2 = len(set(nodeid[]))
     if countd1 > countd2:
         return chain1[]
     elif countd2 > countd1:
         return chain2[]
     else:
-        d = finddivegentpoint(chain1[], chain2[])
-        nodeid1 = getnodeid(chain1[d+1])
-        nodeid2 = getnodeid(chain2[d+1])
+        d = find_divegent_point(chain1[], chain2[])
+        nodeid1 = get_node_id(chain1[d+1])
+        nodeid2 = get_node_id(chain2[d+1])
         n = 1
         while nodeid != nodeid1:
-            nodeid = getnodeid(chain1[d-n])
+            nodeid = get_node_id(chain1[d-n])
             if nodeid == nodeid1:
                 break
             n+=1
         m = 1
         while nodeid != nodeid2:
-            nodeid = getnodeid(chain1[d-m])
+            nodeid = get_node_id(chain1[d-m])
             if nodeid == nodeid2:
                 break
             m+=1
