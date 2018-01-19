@@ -1,3 +1,7 @@
+import Crypto.Hash.MD5 as MD5
+import Crypto.PublicKey.RSA as RSA
+import os
+
 #takes the records to be in the block,
 # the private key of the node creating the block and the current chain as inputs and returns the completed block
 def make_block(records, chain, key, nodeid):
@@ -13,7 +17,6 @@ def make_block(records, chain, key, nodeid):
 
 #block is signed using the private key of the block creating node
 def sign(blockContents, key, nodeid)
-    import Crypto.Hash.MD5 as MD5
     # we created a hash to sign as this is more computationally efficient, but potentially less secure
     hash = MD5.new(blockContents).digest()
     # sign the hash
@@ -22,8 +25,6 @@ def sign(blockContents, key, nodeid)
 
 #creates a new node, this function should only be called after the decision to create a new node has been approved and a node id selected
 def create_node(nodeid)
-    import Crypto.PublicKey.RSA as RSA
-    import os
     # Generates a fresh public/private key pair
     key[nodeid] = RSA.alg.generate(384, os.urandom)#384 is no. of bits that make up the key
     #can be altered to change security v compute time trade off
