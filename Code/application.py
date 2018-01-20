@@ -23,7 +23,7 @@ if not Path(config.key_file).is_file():
 rsa_key = pickle.loads()
 
 # hardcode genesis bloke
-genesis = VerifiedBlock(registration_document='', tribal_signature_A='', tribal_signature_B='', bureaucratic_signature='')
+genesis = [VerifiedBlock(registration_document='', tribal_signature_A='', tribal_signature_B='', bureaucratic_signature='')]
 
 # initialise blockchain
 blockchain = BlockChain(genesis)
