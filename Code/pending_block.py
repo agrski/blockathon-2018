@@ -28,7 +28,7 @@ class PendingBlock:
     def hash_record_contents(cls, registration_document, parent_signature):
         hash_algorithm = SHA256Hash()
         hash_algorithm.update(registration_document+parent_signature)
-        return hash.digest()
+        return hash_algorithm.digest()
 
     @classmethod
     def sign(cls, rsa_key, hash_value):
