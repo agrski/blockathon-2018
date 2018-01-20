@@ -10,12 +10,12 @@ from Crypto.Signature.PKCS1_v1_5 import PKCS115_SigScheme
 class PendingBlock:
 
     def __init__(self, rsa_key, registration_document, blockchain):
+        self.parent_signature = blockchain[-1].get_signature()
         self.registration_document = registration_document
-        parent_signature = blockchain[-1].get_signature()
         encoded_registration_document = PendingBlock.encode_into_byte_string(registration_document)
-        encoded_parent_signature = PendingBlock.encode_into_byte_string(parent_signature)
+        encoded_parent_signature = PendingBlock.encode_into_byte_string(self.parent_signature)
         hash_value = self.hash_record_contents(self, encoded_registration_document, encoded_parent_signature)
-        self.signature = self.sign(rsa_key, hash_value)
+        self._signature = (self.sign(rsa_key, hash_value), '', '')
 
     @classmethod
     def encode_into_byte_string(cls, message):
@@ -34,7 +34,8 @@ class PendingBlock:
         return signature[0]
 
     def get_signature(self):
-        return self._tribal_signature + self._bureaucratic_signature
+        signature = ''.join(self._signature)
+        return signature
 
 
 # CONFLICT RESOLUTION
