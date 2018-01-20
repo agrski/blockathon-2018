@@ -1,4 +1,5 @@
 from Crypto.Hash.SHA256 import SHA256Hash
+from Crypto.Signature.PKCS1_v1_5 import PKCS115_SigScheme
 
 # pending block contents are:
 # - parent signature
@@ -28,7 +29,8 @@ class PendingBlock:
 
     @classmethod
     def sign(cls, rsa_key, hash_value):
-        signature = rsa_key.sign(M=hash_value, K=0)
+        sig_scheme = PKCS115_SigScheme(rsa_key)
+        signature = sig_scheme.sign(hash_value)
         return signature[0]
 
     def get_signature(self):
