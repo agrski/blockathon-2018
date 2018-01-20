@@ -11,7 +11,7 @@ class BlockChain:
     def check_validity(self, blockchain):
         pass
 
-    def resolve_conflicting_blockchains(self):
+    def resolve_conflicting_blockchains(self, block_A, block_B):
         pass
         # step 0: compare which chain has most number of distinct public/private key pairs that signed the blocks.
         # step 1: if equal, select the greatest number of unique contributors from point of divergence
