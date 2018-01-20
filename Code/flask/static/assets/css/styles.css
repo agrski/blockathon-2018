@@ -1,0 +1,40 @@
+.container {
+  height:640px;
+  width:480px;
+}
+
+.heading {
+  text-align:center;
+}
+
+#main_table th, td {
+  text-align:center;
+}
+
+th, td {
+  border-top:0;
+}
+
+#owner_list {
+}
+
+#owner_header {
+  display:inline;
+}
+
+.h1, h3 {
+  font-size:36px;
+}
+
+.owner_div {
+  text-align:center;
+}
+
+#land_table td, th {
+  text-align:center;
+}
+
+#map {
+  height:60%;
+}
+
