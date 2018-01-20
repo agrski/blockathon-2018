@@ -4,7 +4,10 @@ from Crypto.Signature.PKCS1_v1_5 import PKCS115_SigScheme
 # pending block contents are:
 # - parent signature
 # - registration document (including public keys of signatories)
-# - triple of signatures (first entry must be bureaucratic signature)
+# - triple of pending signatures (first entry must be bureaucratic signature)
+
+#TODO
+# implement logic for adding a signature to the correct position in the pending_signatures triple
 
 
 class PendingBlock:
@@ -15,7 +18,7 @@ class PendingBlock:
         encoded_registration_document = PendingBlock.encode_into_byte_string(registration_document)
         encoded_parent_signature = PendingBlock.encode_into_byte_string(self.parent_signature)
         hash_value = self.hash_record_contents(self, encoded_registration_document, encoded_parent_signature)
-        self._signature = (self.sign(rsa_key, hash_value), '', '')
+        self._pending_signatures = (self.sign(rsa_key, hash_value), '', '')
 
     @classmethod
     def encode_into_byte_string(cls, message):
@@ -33,9 +36,8 @@ class PendingBlock:
         signature = sig_scheme.sign(hash_value)
         return signature[0]
 
-    def get_signature(self):
-        signature = ''.join(self._signature)
-        return signature
+    def get_pending_signatures(self):
+        return self._pending_signatures
 
 
 # CONFLICT RESOLUTION
