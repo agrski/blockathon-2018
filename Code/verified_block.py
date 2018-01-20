@@ -1,7 +1,3 @@
-from Crypto.Hash.SHA256 import SHA256Hash
-from Crypto.Signature.PKCS1_v1_5 import PKCS115_SigScheme
-
-
 class VerifiedBlock:
 
     def __init__(self, registration_document, bureacratic_signature, tribal_signature_A, tribal_signature_B, blockchain):
