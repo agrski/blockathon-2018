@@ -7,6 +7,7 @@ import pickle
 
 from pending_block import PendingBlock
 from verified_block import VerifiedBlock
+from blockchain import BlockChain
 import config
 
 # if rsa key does not already exist on file:
@@ -22,10 +23,10 @@ if not Path(config.key_file).is_file():
 rsa_key = pickle.loads()
 
 # hardcode genesis bloke
-genesis = VerifiedBlock(registration_document='', tribal_signature_A='', tribal_signature_B='', bureaucratic_signature='')
+genesis = [VerifiedBlock(registration_document='', tribal_signature_A='', tribal_signature_B='', bureaucratic_signature='')]
 
 # initialise blockchain
-blockchain = [genesis]
+blockchain = BlockChain(genesis)
 
 # initialise pending block queue
 pending_block_queue = []
