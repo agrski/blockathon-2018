@@ -1,0 +1,12 @@
+Government device (G) produces the list of GPS co-ordinates
+Tribe A connects to G
+Tribe A sends G the parent hash of the previous block.
+G Hashes on Parent Hash, GPS Coord. and the G Public Key
+G sends Tribe A the incomplete block
+Tribe A Hashes on Parent Hash, GPS Coord., the G Public Key and the Tribe A public key
+Tribe A sends G the incomplete block
+Tribe B connects to G
+G sends Tribe B the incomplete block
+Tribe B Hashes on Parent Hash, GPS Coord., the G Public Key, the Tribe A public key and the tribe B public Key
+This completes the block, in the block it is clear that tribe A hashed before tribe B
+Tribe B broadcasts the completed block to the blockchain.
