@@ -1,0 +1,13 @@
+BackEnd
+Write find_divergent_point function
+Rewrite Pick From Chains Algorithm
+Create Check chain Valid Algorithm, can call check block hash function
+Rewrite check block Hash Algorithm
+
+
+Extension Work
+Connect front and back end
+design protocol for creation of new key pairs, government approval
+
+Potential future Ideas
+Design so that it could connect to network masts if necessary
