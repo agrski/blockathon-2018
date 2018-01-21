@@ -1,12 +1,10 @@
 	Greetings,
-	Welcome to our GrounBlock presentation and thankyou in advance for listening.
-
-	We decided to take on the land registration issue.
+	Welcome to our GroundBlock presentation on the topic of land registration.
 	
 Context
 
-	Currently the land registration in remote villages and tribes happen by having representitives of 
-	each tribe, which share the borders, and a government official walking around the land and agreeing on
+	Currently land registration in remote villages and tribes involves representitives of 
+	each tribe, which share a border, and a government official walking around the land and agreeing on
 	what land belongs to who. It is mostly done by declaring that this tree or river seperates the land.
 	
 	We identified three major improvement areas:
@@ -18,11 +16,11 @@ Concept
 	
 	Our idea allows the government official walking around with the tribe leaders to record the coordinates by using GPS devices.
 	
-	There would be two devices used in this situation. Authentication device used by the tribe and the GPS brought by the government official.
+	There would be two devices used in this situation. The authentication device used by the tribe and the GPS device brought by the government official.
 	
 Solution
 
-	There are many challenges to realising our ambition in PNG, or any other developing country, we have enjoyed solvoing these challenges.
+	There are many challenges to realising our ambition in PNG, or any other developing country, we have enjoyed solving these challenges.
 	Firstly I want to talk about cost and electricity;
 	We have designed our devices to be low-cost, about $70 and we should be able to reduce this with access to wholesale prices.
 	Our devices are designed to be low power, normally running at under 0.2 Watts, allowing for week long, battery life and charging using solar, wind or hand crank costing as between $2-$15.
