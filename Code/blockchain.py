@@ -1,4 +1,3 @@
-from datetime import datetime
 import json
 
 class BlockChain:
@@ -27,21 +26,21 @@ class BlockChain:
             public_keys_B_from_divergence = public_keys_B[divergence_index:]
 
             if len(public_keys_A_from_divergence) == len(public_keys_B_from_divergence):
-                # step 2: if equal, select blockchain for which the private/public key pair (at point of divergence) signed the earliest block (before the point of divergence)
+                # step 2: if equal, select blockchain for which the private/public key pair (at point of divergence) signed the earliest block in the chian (index based)
                 predivergent_blocks = self._blockchain[:divergence_index]
                 public_key_A = public_keys_A_from_divergence[0]
                 public_key_B = public_keys_B_from_divergence[0]
-                timestamps_A = [datetime.strptime(json.loads(block.registration_document)['timestamp'], '%Y/%m/%d') for block in predivergent_blocks if json.loads(block.registration_document)['public_key'] == public_key_A].sort()
-                timestamps_B = [datetime.strptime(json.loads(block.registration_document)['timestamp'], '%Y/%m/%d') for block in predivergent_blocks if json.loads(block.registration_document)['public_key'] == public_key_B].sort()
+                indices_A = [predivergent_blocks.index(block) for block in predivergent_blocks if json.loads(block.registration_document)['public_key'] == public_key_A].sort()
+                indices_B = [predivergent_blocks.index(block) for block in predivergent_blocks if json.loads(block.registration_document)['public_key'] == public_key_B].sort()
 
-                if timestamps_A[0] == timestamps_B[0]:
+                if indices_A[-1] == indices_B[-1]:
                     # step 3: if equal, select first public key from alphabetic order
                     if public_key_A < public_key_B:
                         return self._blockchain
                     else:
                         return new_blockchain
 
-                elif timestamps_A[0] < timestamps_B[0]:
+                elif indices_A[0] < indices_B[0]:
                     return self._blockchain
                 else:
                     return new_blockchain
