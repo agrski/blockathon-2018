@@ -38,10 +38,3 @@ class PendingBlock:
 
     def get_pending_signatures(self):
         return self._pending_signatures
-
-
-# CONFLICT RESOLUTION
-
-# find divergence point by overlapping coordinates.
-# step 1: accept the block with the greatest number of unique public keys.
-# step 2: accept the record whose public key added a record to the blockchain most recently since the point of divergence (check timetimestamp)
