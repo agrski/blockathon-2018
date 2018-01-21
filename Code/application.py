@@ -14,7 +14,7 @@ import config
 if not Path(config.key_file).is_file():
     # generate unique rsa key
     rsa = RSAImplementation()
-    rsa_key = rsa.generate(bits=384)
+    rsa_key = rsa.generate(bits=1024)
     # save to file
     with open(config.key_file, 'w') as f:
         pickle.dump(rsa_key, f)

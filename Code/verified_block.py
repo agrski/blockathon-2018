@@ -4,7 +4,7 @@ class VerifiedBlock:
         if not blockchain:
             self.parent_signature = ''
         else:
-            self.parent_signature = blockchain[-1].get_signature()
+            self.parent_signature = blockchain.get_blockchain[-1].get_signature()
         self.registration_document = registration_document
         self._signature = (bureaucratic_signature, tribal_signature_A, tribal_signature_B)
 
