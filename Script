@@ -9,12 +9,14 @@ Context
 	
 	We identified three major improvement areas:
 		- It is hard to document the exact location of the land
-		- The paper trail creates long time lags and can reduce accuracy
-		- Having verified accessible land ownership records will give communities an asset when taking out loans
+		- The paper trail is inefficient, unreliable and imprecise.
+		- Verified accessible Land ownership records enable financial inclusion by giving them an asset they can secure lending against. 
 	
 Concept
 	
-	Our idea allows the government official walking around with the tribe leaders to record the coordinates by using GPS devices.
+	Groundblock is our unique solution to financial inclusion. Our Radio devices enable the remotest land-owner to register their land on our blockchain by passing information between neighbouring devices with minimal power and processing consumption.
+
+	A government official walks around with the tribe leaders to record the coordinates by using GPS devices.
 	There would be two devices used in this situation. The authentication device used by the tribe and the GPS device brought by the government official.
 	
 Solution
@@ -22,7 +24,7 @@ Solution
 	There are many challenges to realising our ambition in PNG, or any other developing country, we have enjoyed solving these challenges.
 	Firstly I want to talk about cost and electricity;
 	We have designed our devices to be low-cost, about $70 and we should be able to reduce this with access to wholesale prices.
-	Our devices are designed to be low power, normally running at under 0.2 Watts, allowing for week long, battery life and charging using solar, wind or hand crank costing us between $2-$15.
+	Our devices are designed to be low power, normally running at under 0.2 Watts, allowing for week long battery life and charging using solar, wind or hand crank costing between $2-$15.
 	Secondly Information Visibility;
 	We have designed this interface so that government officials and approved financial institutions can access the data including when and by whom the registration was verified.
 	Finally Communication;
