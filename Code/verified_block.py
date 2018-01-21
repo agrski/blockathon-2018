@@ -3,7 +3,7 @@ class VerifiedBlock:
     def __init__(self, registration_document, bureacratic_signature, tribal_signature_A, tribal_signature_B, blockchain=[]):
         if not blockchain:
             self.parent_signature = ''
-        else
+        else:
             self.parent_signature = blockchain[-1].get_signature()
         self.registration_document = registration_document
         self._signature = (bureacratic_signature, tribal_signature_A, tribal_signature_B)

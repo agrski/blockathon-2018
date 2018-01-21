@@ -1,7 +1,7 @@
 # Author: Steven Ghoussain
 # Date: Saturday 20th January 2018
 
-from Crypto.PublicKey.RSA import RSA_Implementation
+from Crypto.PublicKey.RSA import RSAImplementation
 from pathlib import Path
 import pickle
 
@@ -13,7 +13,7 @@ import config
 # if rsa key does not already exist on file:
 if not Path(config.key_file).is_file():
     # generate unique rsa key
-    rsa = RSA_Implementation()
+    rsa = RSAImplementation()
     rsa_key = rsa.generate(bits=384)
     # save to file
     with open(config.key_file, 'w') as f:
