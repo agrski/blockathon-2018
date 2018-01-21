@@ -1,23 +1,34 @@
-Greetings,
+	Greetings,
+	Welcome to our GrounBlock presentation and thankyou in advance for listening.
 
-	We decided to take on the land registration issue
+	We decided to take on the land registration issue.
+	
+Context
 
 	Currently the land registration in remote villages and tribes happen by having representitives of 
 	each tribe, which share the borders, and a government official walking around the land and agreeing on
-	what land belongs to who. It is mostly done by declaring that this tree or river seperates the land. There are
-	many flaws that come with this approach.
+	what land belongs to who. It is mostly done by declaring that this tree or river seperates the land.
 	
-	We identified three major problems:
+	We identified three major improvement areas:
 		- It is hard to document the exact location of the land
-		- As all the documentation is done on paper it takes a lot of time for it to be processed and officially declared
-		as the land of the certain tribe. Also, if the documents are lost the land ownership becomes harder to declare.
-		- The last but not least having a proper entitlement of the land would allow the villages
-		and tribes to put it as an asset when taking loans.
+		- The paper trail creates long time lags and can reduce accuracy
+		- Having verified accessible land ownership records will give communities an asset when taking loans
 	
-	The idea we came up with would eliminate the aforementioned flaws, it would allow the government official walking around 
-	with the tribe leaders automatically record the coordinates into the blockchain by using gps devices. 
+Concept
 	
-	There would be two devices used in this situation. Authentication device used by the tribe leaders and GPS brought by the 
-	government official. 
+	Our idea allows the government official walking around with the tribe leaders to record the coordinates by using GPS devices.
 	
+	There would be two devices used in this situation. Authentication device used by the tribe and the GPS brought by the government official.
+	
+Solution
+
+	There are many challenges to realising our ambition in PNG, or any other developing country, we have enjoyed solvoing these challenges.
+	Firstly I want to talk about cost and electricity;
+	We have designed our devices to be low-cost, about $70 and we should be able to reduce this with access to wholesale prices.
+	Our devices are designed to be low power, normally running at under 0.2 Watts, allowing for week long, battery life and charging using solar, wind or hand crank costing as between $2-$15.
+	Secondly Information Visibility;
+	We have designed this interface so that government officials and approved financial institutions can access the data including when by whom the registration was verified.
+	Finally Communication;
+	Without reliable telecomms infrastructure we have designed a network where the devices can communicate with the wider network by using other devices as stepping stones. This is highly reliable as no device is essential, the data will simply be sent by another route if one node goes down.
+	To summarise we believe the key benefits of our application are...
 	
