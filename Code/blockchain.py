@@ -9,8 +9,23 @@ class BlockChain:
         self._blockchain = blockchain
 
     def add_block(self, block):
-        if self.check_block_validity(block):
+        if self.check_new_block_validity():
             self._blockchain.append(block)
+
+    def check_new_block_validity(self, block):
+        if block.parent_signature == self._blockchain[-1].get_signature():
+            public_keys = PendingBlock.encode_into_byte_string(block.parent_signature)
+            for public_key in public_keys:
+                encoded_registration_document = PendingBlock.encode_into_byte_string(block.registration_document)
+                encoded_parent_signature = PendingBlock.encode_into_byte_string(block.parent_signature)
+                hash_value = PendingBlock.hash_record_contents(encoded_registration_document, encoded_parent_signature)
+                rsa_credentials = self.parse_public_key(public_key)
+                sig_scheme = PKCS115_SigScheme(rsa_credentials)
+                if not sig_scheme.verify(hash_value, block.get_signature()):
+                    return False
+            return True
+        else:
+            return False
 
     def check_block_validity(self, index):
         block = self._blockchain[index]
