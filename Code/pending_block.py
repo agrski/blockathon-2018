@@ -1,4 +1,4 @@
-from Crypto.Hash.SHA256 import SHA256Hash
+from Crypto.Hash.MD5 import MD5Hash
 from Crypto.Signature.PKCS1_v1_5 import PKCS115_SigScheme
 
 # pending block contents are:
@@ -26,7 +26,7 @@ class PendingBlock:
 
     @classmethod
     def hash_record_contents(cls, registration_document, parent_signature):
-        hash_algorithm = SHA256Hash()
+        hash_algorithm = MD5Hash()
         hash_algorithm.update(registration_document+parent_signature)
         return hash_algorithm.digest()
 
