@@ -13,8 +13,8 @@ class BlockChain:
             self._blockchain.append(block)
 
     def check_block_validity(self, index):
-        block = self._blockchain(index)
-        parent_block = self.blockchain(index-1)
+        block = self._blockchain[index]
+        parent_block = self.blockchain[index-1]
         if block.parent_signature == parent_block.get_signature():
             public_keys = PendingBlock.encode_into_byte_string(block.parent_signature)
             for public_key in public_keys:
