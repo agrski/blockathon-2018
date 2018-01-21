@@ -40,7 +40,7 @@ class BlockChain:
                     else:
                         return new_blockchain
 
-                elif indices_A[0] < indices_B[0]:
+                elif indices_A[-1] < indices_B[-1]:
                     return self._blockchain
                 else:
                     return new_blockchain
