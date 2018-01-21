@@ -9,7 +9,7 @@ class BlockChain:
         self._blockchain = blockchain
 
     def add_block(self, block):
-        if self.check_new_block_validity():
+        if self.check_new_block_validity(block):
             self._blockchain.append(block)
 
     def check_new_block_validity(self, block):
