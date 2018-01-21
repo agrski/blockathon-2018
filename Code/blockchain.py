@@ -1,4 +1,7 @@
 import json
+from pending_block import PendingBlock
+
+from Crypto.Signature.PKCS1_v1_5 import PKCS115_SigScheme
 
 class BlockChain:
 
@@ -6,12 +9,38 @@ class BlockChain:
         self._blockchain = blockchain
 
     def add_block(self, block):
-        if self.check_validity(block):
+        if self.check_block_validity(block):
             self._blockchain.append(block)
 
-    # Check that a blockchain is valid
-    def check_validity(self, blockchain):
+    def check_block_validity(self, index):
+        block = self._blockchain(index)
+        parent_block = self.blockchain(index-1)
+        if block.parent_signature == parent_block.get_signature():
+            public_keys = PendingBlock.encode_into_byte_string(block.parent_signature)
+            for public_key in public_keys:
+                encoded_registration_document = PendingBlock.encode_into_byte_string(block.registration_document)
+                encoded_parent_signature = PendingBlock.encode_into_byte_string(block.parent_signature)
+                hash_value = PendingBlock.hash_record_contents(encoded_registration_document, encoded_parent_signature)
+                rsa_credentials = self.parse_public_key(public_key)
+                sig_scheme = PKCS115_SigScheme(rsa_credentials)
+                if not sig_scheme.verify(hash_value, block.get_signature()):
+                    return False
+            return True
+        else:
+            return False
+
+    def parse_public_key(self, public_key):
         pass
+
+    # Check that a blockchain is valid
+    def check_chain_validity(self):
+        # check genesis block is valid
+        genesis_block  = self._blockchain[0]
+        if genesis_block.parent_signature == '' and genesis_block.registration_document == '' and genesis_block.get_signature() == ('', '', ''):
+            validity_checks = [not(self.check_block_validity(self._blockchain.index(block))) for block in self._blockchain[1:]]
+            return any(validity_checks)
+        else:
+            return False
 
     def resolve_conflicting_blockchains(self, new_blockchain):
         # assume that registration document is a json string with key 'public_key'
