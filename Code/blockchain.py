@@ -17,7 +17,7 @@ class BlockChain:
     def resolve_conflicting_blockchains(self, new_blockchain):
         # assume that registration document is a json string with key 'public_key'
         # step 0: compare which chain has most number of distinct public/private key pairs that signed the blocks.
-        public_keys_A = set([json.loads(block.registration_document)['public_key'] for block in self._blockcchain])
+        public_keys_A = set([json.loads(block.registration_document)['public_key'] for block in self._blockchain])
         public_keys_B = set([json.loads(block.registration_document)['public_key'] for block in new_blockchain.get_blockchain()])
 
         if len(public_keys_A) == len(public_keys_B):
