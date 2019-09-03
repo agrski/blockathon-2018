@@ -1,0 +1,33 @@
+	Hi,
+	Welcome to our GroundBlock presentation on the topic of land registration.
+	
+Context
+
+	Currently land registration in remote villages and tribes involves representitives of 
+	each tribe, which share a border, and a government official walking around the land and agreeing on
+	what land belongs to who. It is mostly done by declaring that this tree or river seperates the land.
+	
+	We identified three major improvement areas:
+		- It is hard to document the exact location of the land
+		- The paper trail is inefficient, unreliable and imprecise.
+		- Verified accessible Land ownership records enable financial inclusion by giving them an asset they can secure lending against. 
+	
+Concept
+	
+	Groundblock is our unique solution to financial inclusion. Our Radio devices enable the remotest land-owner to register their land on our blockchain by passing information between neighbouring devices with minimal power and processing consumption.
+
+	A government official walks around with the tribe leaders to record the coordinates by using GPS devices.
+	There would be two devices used in this situation. The authentication device used by the tribe and the GPS device brought by the government official.
+	
+Solution
+
+	There are many challenges to realising our ambition in PNG, or any other developing country, we have enjoyed solving these challenges.
+	Firstly I want to talk about cost and electricity;
+	We have designed our devices to be low-cost, about $70 and we should be able to reduce this with access to wholesale prices.
+	Our devices are designed to be low power, normally running at under 0.2 Watts, allowing for week long battery life and charging using solar, wind or hand crank costing between $2-$15.
+	Secondly Information Visibility;
+	We have designed this interface so that government officials and approved financial institutions can access the data including when and by whom the registration was verified.
+	Finally Communication;
+	Without reliable telecomms infrastructure we have designed a network where the devices can communicate with the wider network by using other devices as stepping stones. This is highly reliable as no device is essential, the data will simply be sent by another route if one node goes down.
+	To summarise we believe the key benefits of our application are...
+	
